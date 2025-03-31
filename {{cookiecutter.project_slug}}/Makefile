@@ -36,6 +36,9 @@ setup:
 	@uv venv $(VENV_NAME) -p $(PYTHON)
 	@echo "Installing dependencies..."
 	@uv pip install -e "."
+	@echo "Setting up direnv..."
+	@echo "source .venv/bin/activate" > .envrc
+	@direnv allow .
 	@echo "Setup complete. Activate the virtual environment with: $(VENV_ACTIVATE)"
 
 # 安装开发依赖
